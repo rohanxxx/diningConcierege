@@ -17,6 +17,14 @@ class at Columbia University and New York University.
 
 ## Outline:
 
+Customer Service is a core service for a lot of businesses around the world and it is getting disrupted at the moment by Natural Language Processing-powered applications. In this first assignment you will implement a serverless, microservice-driven web application. Specifically, you will build a Dining Concierge chatbot that sends you restaurant suggestions given a set of preferences that you provide the chatbot with through conversation.
+
+Architecture Diagram:
+
+Screenshot 2023-02-07 at 3.21.54 PM.png
+
+Outline:
+
 This assignment has the following requirements:
 
 Build and deploy the frontend of the application
@@ -46,11 +54,15 @@ Links to an external site.
 Build a Dining Concierge chatbot using Amazon Lex.
 Create a new bot using the Amazon Lex service. Read up the documentation on all things Lex, for more information: https://docs.aws.amazon.com/lex/latest/dg/getting-started.html Links to an external site.  
 Create a Lambda function (LF1) and use it as a code hook for Lex, which essentially entails the invocation of your Lambda before Lex responds to any of your requests -- this gives you the chance to manipulate and validate parameters as well as format the bot’s responses. More documentation on Lambda code hooks at the following link: https://docs.aws.amazon.com/lex/latest/dg/using-lambda.html Links to an external site. 
+
 Bot Requirements:
+
 Implement at least the following three intents:
-GreetingIntent
-ThankYouIntent
-DiningSuggestionsIntent
+
+- GreetingIntent
+- ThankYouIntent
+- DiningSuggestionsIntent
+
 The implementation of an intent entails its setup in Amazon Lex as well as handling its response in the Lambda function code hook.
 Example: for the GreetingIntent you need to 1. create the intent in Lex, 2. train and test the intent in the Lex console, 3. implement the handler for the GreetingIntent in the Lambda code hook, such that when you receive a request for the GreetingIntent you compose a response such as “Hi there, how can I help?”
 For the DiningSuggestionsIntent, you need to collect at least the following pieces of information from the user, through conversation:
@@ -169,3 +181,5 @@ Make sure entered time or date is the future. We can enter time and date as numb
 Validate email address or phone number.
 City: I can say 'Manhattan' or "I would like to eat around Manhattan'.
 These are just few example cases, make sure to handle all possible edge cases and in case of error, ask the user to answer the prompt again (please don't start over the entire conversation, just ask the prompt again where error occurs).
+
+---
